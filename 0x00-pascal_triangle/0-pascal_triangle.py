@@ -3,12 +3,14 @@
 pascal's triangle
 """
 
+
 def factorial(x):
     """calculate factorial of number"""
     if x == 0:
         return 1
     else:
         return (x * factorial(x-1))
+
 
 def pascal_triangle(n):
     """function that returns a list of lists"""
@@ -23,4 +25,3 @@ def pascal_triangle(n):
         a.append(b)
         b = []
     return a
- 
