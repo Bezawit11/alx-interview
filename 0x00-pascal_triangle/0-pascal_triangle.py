@@ -17,7 +17,7 @@ def pascal_triangle(n):
     b = []
     a = []
     if n <= 0:
-        return [[]]
+        return []
     for i in range(n):
         for j in range(i+1):
             # nCr = n!/((n-r)!*r!)
