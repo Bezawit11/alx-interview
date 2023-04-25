@@ -7,7 +7,7 @@ lockboxes
 def canUnlockAll(boxes):
     """Return True if all boxes can be opened, else return False"""
     l = boxes[0]
-    if l == [[]]:
+    if l == [[]] or l == []:
         return False
     l.append(0)
     for i in l:
