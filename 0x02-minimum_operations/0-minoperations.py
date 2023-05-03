@@ -28,8 +28,10 @@ def minOperations(n):
         for i in range(1, n + 1):
             if n % i == 0 and i < n // 2:
                 lm.append(i)
-        b = lm[1]
+        print(lm)
+        b = lm[-1]
         c = b - len(s)
         k = (h / b) - 2
-        sum = sum + 2 + c + k + 2
+        sum = sum + (h / lm[-1]) + c + 2
         return int(sum)
+    
