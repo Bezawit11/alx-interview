@@ -31,6 +31,6 @@ def minOperations(n):
                 lm.append(i)
         b = lm[-1]
         c = b - len(s)
-        sum = sum + (h / lm[-1]) + c + 2
+        sum = sum + (n / lm[-1]) + c
         return int(sum)
     
