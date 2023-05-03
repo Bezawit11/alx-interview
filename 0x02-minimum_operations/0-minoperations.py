@@ -20,7 +20,7 @@ def minOperations(n):
                     break
         c = lm[-1] - len(s)
         if h == lm[-1]:
-            return sum + 2 + c
+            return int(sum + 2 + c)
         sum = sum + (h / lm[-1]) + 2 + c
         return int(sum)
     else:
@@ -31,7 +31,6 @@ def minOperations(n):
                 lm.append(i)
         b = lm[-1]
         c = b - len(s)
-        k = (h / b) - 2
         sum = sum + (h / lm[-1]) + c + 2
         return int(sum)
     
