@@ -18,9 +18,9 @@ def minOperations(n):
                 lm.append(i)
                 if i != 1 and i != 2:
                     break
-        c = lm[-1] - len(s) # no of pastes 0
         if lm[-1] == h:
-            return sum + 2 + c
+            return sum + 2
+        c = lm[-1] - len(s) # no of pastes 0
         k = (h / lm[-1]) - 2 # no of cp
         sum = sum + 2 + c + k + 2
         return int(sum)
