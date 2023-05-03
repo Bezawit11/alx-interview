@@ -14,7 +14,7 @@ def minOperations(n):
     h = n / 2
     if n % 2 == 0:
         for i in range(1, n + 1):
-            if h % i == 0 and i <= n // 2:
+            if h % i == 0 and i <= n / 2:
                 lm.append(i)
                 if i != 1 and i != 2:
                     break
