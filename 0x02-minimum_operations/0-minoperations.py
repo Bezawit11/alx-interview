@@ -14,11 +14,14 @@ def minOperations(n):
     h = n / 2
     if n % 2 == 0:
         for i in range(1, n + 1):
-            if n % i == 0 and i < n // 2:
+            if n % i == 0 and i <= n // 2:
                 lm.append(i)
-        b = lm[2]
-        c = b - len(s)
-        k = (h / b) - 2
+                if i != 1 and i != 2:
+                    break
+        c = lm[-1] - len(s) # no of pastes 0
+        if lm[-1] == h:
+            return sum + 2 + c
+        k = (h / lm[-1]) - 2 # no of cp
         sum = sum + 2 + c + k + 2
         return int(sum)
     else:
