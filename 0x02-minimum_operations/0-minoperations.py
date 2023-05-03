@@ -6,6 +6,8 @@ def minOperations(n):
     """a method that calculates the fewest number of operations 
     needed to result in exactly n H characters in the file
     """
+    if n == 0 or n == 1:
+        return 0
     s = 'HH'
     sum = 2
     lm = []
