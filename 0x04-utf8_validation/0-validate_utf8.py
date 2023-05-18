@@ -10,11 +10,11 @@ def validUTF8(data):
     while index < len(data):
         number = data[index] & (2 ** 7)
         number >>= (NUMBER_OF_BITS_PER_BLOCK - 1)
-        if number == 0:  # single byte char
+        if number == 0:
             index += 1
             continue
         number_of_ones = 0
-        while True:  # get the number of significant ones
+        while True:
             number = data[index] & (2 ** (7 - number_of_ones))
             number >>= (NUMBER_OF_BITS_PER_BLOCK - number_of_ones - 1)
             if number == 1:
@@ -22,12 +22,12 @@ def validUTF8(data):
             else:
                 break
             if number_of_ones > MAX_NUMBER_OF_ONES:
-                return False  # too much ones per char sequence
+                return False
         if number_of_ones == 1:
             return False
         index += 1
         if index >= len(data) or index >= (index + number_of_ones - 1):
-            return False  
+            return False
         for i in range(index, index + number_of_ones - 1):
             number = data[i]
             number >>= (NUMBER_OF_BITS_PER_BLOCK - 1)
