@@ -3,10 +3,7 @@
 
 
 import sys
-from signal import signal, SIGPIPE, SIG_DFL
-
-
-signal(SIGPIPE,SIG_DFL)
+import errno
  
 l = []
 d = {'200': 0,
@@ -27,5 +24,9 @@ for i in l:
     if key in d.keys():
         d[key]+= 1
 print('File size: sum')
-for k,v in d.items():
-    print(k, v)
+try:
+    for k,v in d.items():
+        print(k, v)
+except IOError as e:
+    if e.errno == errno.EPIPE:
+      pass
