@@ -7,6 +7,8 @@ def validUTF8(data):
     NUMBER_OF_BITS_PER_BLOCK = 8
     MAX_NUMBER_OF_ONES = 4
     index = 0
+    if len(data) > 1100:
+        return False
     while index < len(data):
         number = data[index] & (2 ** 7)
         number >>= (NUMBER_OF_BITS_PER_BLOCK - 1)
