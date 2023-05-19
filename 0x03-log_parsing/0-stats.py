@@ -27,6 +27,6 @@ print('File size: sum')
 try:
     for k,v in d.items():
         print(k, v)
-except IOError as e:
-    if e.errno == errno.EPIPE:
-      pass
+except (BrokenPipeError, IOError):
+    print ('BrokenPipeError caught', file = sys.stderr)
+sys.stderr.close()
