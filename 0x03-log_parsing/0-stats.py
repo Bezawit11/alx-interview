@@ -29,7 +29,7 @@ try:
     print('File size: sum')
     for k,v in d.items():
         print(k, v)
-finally:
-    print('File size: sum')
-    for k,v in d.items():
-        print(k, v)
+except (BrokenPipeError, IOError):
+    print ('BrokenPipeError caught', file = sys.stderr)
+sys.stderr.close()
+
