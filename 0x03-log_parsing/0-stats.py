@@ -3,8 +3,8 @@
 
 
 import sys
-import errno
  
+
 l = []
 d = {'200': 0,
      '301': 0,
@@ -30,4 +30,6 @@ try:
     for k,v in d.items():
         print(k, v)
 finally:
-    print_msg(d, sum)
+    print('File size: sum')
+    for k,v in d.items():
+        print(k, v)
