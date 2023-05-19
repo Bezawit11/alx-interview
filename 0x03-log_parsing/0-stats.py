@@ -25,11 +25,12 @@ try:
         sum += int(i.split()[-1])
         key = i.split()[-2]
         if key in d.keys():
-            d[key]+= 1
+            d[key] += 1
     print('File size: sum')
     for k,v in d.items():
-        print(k, v)
+        if v != 0:
+            print(k, v)
 except (BrokenPipeError, IOError):
-    print ('BrokenPipeError caught', file = sys.stderr)
+    pass
 sys.stderr.close()
 
