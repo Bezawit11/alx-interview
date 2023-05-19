@@ -29,7 +29,10 @@ def validUTF8(data):
         if index >= len(data) or index >= (index + number_of_ones - 1):
             return False
         for i in range(index, index + number_of_ones - 1):
-            number = data[i]
+            try:
+                number = data[i]
+            except:
+                return False
             number >>= (NUMBER_OF_BITS_PER_BLOCK - 1)
             if number != 1:
                 return False
