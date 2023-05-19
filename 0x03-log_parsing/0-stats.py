@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+i#!/usr/bin/python3
 """log parsing"""
 
 
 import sys
  
- l = []
- d = {'200': 0,
+l = []
+d = {'200': 0,
       '401': 0,
       '403': 0,
       '404': 0,
