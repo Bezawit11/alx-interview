@@ -3,6 +3,10 @@
 
 
 import sys
+from signal import signal, SIGPIPE, SIG_DFL
+
+
+signal(SIGPIPE,SIG_DFL)
  
 l = []
 d = {'200': 0,
