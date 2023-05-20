@@ -29,7 +29,7 @@ try:
     print('File size: ', sum)
     for k,v in d.items():
         if v != 0:
-            print(k,': ', v)
+            print(f"{k}: {v}")
 except KeyboardInterrupt:
     pass
 sys.stderr.close()
