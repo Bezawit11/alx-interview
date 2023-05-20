@@ -29,16 +29,16 @@ if __name__ == '__main__':
             try:
                 key = i.split()[-2]
                 if key in d.keys():
-                    d[key]+= 1
+                    d[key] += 1
             except BaseException:
                 pass
         print('File size:', sum)
-        for k,v in d.items():
+        for k,v in sorted(d.items()):
             if v != 0:
                 print("{}: {}".format(k, v))
     except KeyboardInterrupt:
         print('File size:', sum)
-        for k,v in d.items():
+        for k,v in sorted(d.items()):
             if v != 0:
                 print("{}: {}".format(k, v))
         raise
