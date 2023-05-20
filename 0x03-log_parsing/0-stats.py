@@ -3,9 +3,7 @@
 
 
 import sys
-from signal import signal, SIGPIPE, SIG_DFL
-#
-s
+
 
 if __name__ == '__main__':
     lm = []
@@ -16,8 +14,7 @@ if __name__ == '__main__':
          '403': 0,
          '404': 0,
          '405': 0,
-         '500': 0
-        }
+         '500': 0}
     sum = 0
     try:
         for line in sys.stdin:
