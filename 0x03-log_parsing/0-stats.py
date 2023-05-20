@@ -29,6 +29,6 @@ try:
     print('File size: sum')
     for k,v in d.items():
         print(k, v)
-except BrokenPipeError, IOError:
+except BrokenPipeError:
     pass
 sys.stderr.close()
