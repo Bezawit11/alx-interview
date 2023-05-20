@@ -3,12 +3,12 @@
 
 
 import sys
-from signal import signal, SIGPIPE, SIG_DFL 
-#Ignore SIG_PIPE and don't throw exceptions on it... (http://docs.python.org/library/signal.html)
-signal(SIGPIPE,SIG_DFL) 
- 
+from signal import signal, SIGPIPE, SIG_DFL
+#
+s
+
 if __name__ == '__main__':
-    l = []
+    lm = []
     d = {'200': 0,
          '301': 0,
          '400': 0,
@@ -17,14 +17,14 @@ if __name__ == '__main__':
          '404': 0,
          '405': 0,
          '500': 0
-     }
+        }
     sum = 0
     try:
         for line in sys.stdin:
-            l.append(line)
-            if len(l) == 10:
+            lm.append(line)
+            if len(lm) == 10:
                 break
-        for i in l:
+        for i in lm:
             try:
                 sum += int(i.split()[-1])
             except BaseException:
@@ -36,13 +36,12 @@ if __name__ == '__main__':
             except BaseException:
                 pass
         print('File size:', sum)
-        for k,v in sorted(d.items()):
+        for k, v in sorted(d.items()):
             if v != 0:
                 print("{}: {}".format(k, v))
     except KeyboardInterrupt:
         print('File size:', sum)
-        for k,v in sorted(d.items()):
+        for k, v in sorted(d.items()):
             if v != 0:
                 print("{}: {}".format(k, v))
         raise
-
