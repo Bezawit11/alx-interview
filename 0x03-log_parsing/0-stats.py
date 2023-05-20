@@ -26,7 +26,7 @@ try:
         key = i.split()[-2]
         if key in d.keys():
             d[key]+= 1
-    print('File size: sum')
+    print('File size: sum', flush=True)
     for k,v in d.items():
         print(k, v)
 except KeyboardInterrupt:
