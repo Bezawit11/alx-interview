@@ -26,7 +26,7 @@ try:
         key = i.split()[-2]
         if key in d.keys():
             d[key]+= 1
-    print('File size: sum', flush=True)
+    print('File size: ', sum)
     for k,v in d.items():
         if v != 0:
             print(k, v)
