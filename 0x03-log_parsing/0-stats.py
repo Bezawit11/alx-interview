@@ -26,10 +26,10 @@ try:
         key = i.split()[-2]
         if key in d.keys():
             d[key]+= 1
-    print('File size: ', sum)
+    print('File size:', sum)
     for k,v in d.items():
         if v != 0:
-            print("{}:{}".format(k, v))
+            print("{}: {}".format(k, v))
 except KeyboardInterrupt:
     pass
 sys.stderr.close()
