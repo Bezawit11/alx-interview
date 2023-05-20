@@ -22,10 +22,13 @@ if __name__ == '__main__':
             if len(l) == 10:
                 break
         for i in l:
-            sum += int(i.split()[-1])
+            try:
+                sum += int(i.split()[-1])
+            except BaseException:
+                pass
             key = i.split()[-2]
             if key in d.keys():
-                d[key]+= 1
+               d[key]+= 1
         print('File size:', sum)
         for k,v in d.items():
             if v != 0:
