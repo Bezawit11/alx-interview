@@ -26,9 +26,12 @@ if __name__ == '__main__':
                 sum += int(i.split()[-1])
             except BaseException:
                 pass
-            key = i.split()[-2]
-            if key in d.keys():
-               d[key]+= 1
+            try:
+                key = i.split()[-2]
+                if key in d.keys():
+                    d[key]+= 1
+            except BaseException:
+                pass
         print('File size:', sum)
         for k,v in d.items():
             if v != 0:
