@@ -31,5 +31,9 @@ try:
         if v != 0:
             print("{}: {}".format(k, v))
 except KeyboardInterrupt:
-    pass
-sys.stderr.close()
+    print('File size:', sum)
+    for k,v in d.items():
+        if v != 0:
+            print("{}: {}".format(k, v))
+    raise
+
