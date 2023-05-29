@@ -3,10 +3,6 @@
 import sys
 
 
-a = sys.argv[0]
-queen(a)
-
-
 def refine(lists, d):
     j = []
     k = []
@@ -131,3 +127,9 @@ def queen(n):
             m = []
     evaluate(d, matrix)
     return 1
+
+a = sys.argv[0]
+queen(a)
+
+
+
