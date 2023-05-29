@@ -3,7 +3,7 @@
 import sys
 
 
-a = sys.argv[1]
+a = sys.argv[0]
 queen(a)
 
 
