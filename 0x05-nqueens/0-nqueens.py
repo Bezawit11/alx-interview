@@ -129,4 +129,5 @@ def queen(n):
     return 1
 
 a = sys.argv[0]
-queen(int(a))
+if a:
+    queen(int(a))
