@@ -128,6 +128,9 @@ def queen(n):
     evaluate(d, matrix)
     return 1
 
-a = sys.argv[0]
-if a:
+if len(sys.argv) != 1:
+    print('Usage: nqueens N')
+    exit(1)
+else:
+    a = sys.argv[0]
     queen(int(a))
