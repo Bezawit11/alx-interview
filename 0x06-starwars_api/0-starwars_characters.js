@@ -6,15 +6,25 @@ r('https://swapi-api.alx-tools.com/api/films/' + process.argv[2], function (erro
     return;
   }
   const info = JSON.parse(body);
-  for (let i = 0; i < info.characters.length; i++) {
-    const req = require('request');
-    req(info.characters[i], function (error, response, body) {
-      if (error) {
-        console.error(error);
-        return;
-      }
-      const chars = JSON.parse(body);
-      console.log(chars.name);
-    });
-  }
+  const chars = info.characters;
+  if (chars && chars.length > 0) {
+      const limit = chars.length;
+      PrintChar(0, chars[0], chars, limit);
+    }
 });
+
+function PrintChar (idx, url, characters, limit) {
+  if (idx === limit) {
+    return;
+  }
+  r(url, function (error, response, body) {
+    if (!error) {
+      const ub = JSON.parse(body);
+      console.log(ub.name);
+      idx++;
+      PrintChar(idx, characters[idx], characters, limit);
+    } else {
+      console.error('error:', error);
+    }
+  });
+}
