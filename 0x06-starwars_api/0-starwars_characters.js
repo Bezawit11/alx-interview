@@ -8,9 +8,9 @@ r('https://swapi-api.alx-tools.com/api/films/' + process.argv[2], function (erro
   const info = JSON.parse(body);
   const chars = info.characters;
   if (chars && chars.length > 0) {
-      const limit = chars.length;
-      PrintChar(0, chars[0], chars, limit);
-    }
+    const limit = chars.length;
+    PrintChar(0, chars[0], chars, limit);
+  }
 });
 
 function PrintChar (idx, url, characters, limit) {
