@@ -8,8 +8,8 @@ def rotate_2d_matrix(m):
     o = []
     f = m.copy()
     m.clear()
-    for i in range(3):
-        for n in range(3):
+    for i in range(len(f)):
+        for n in range(len(f)):
             o.append(f[n][i])
         m.append(o)
         o = []
