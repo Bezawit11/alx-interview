@@ -9,6 +9,8 @@ def makeChange(coins, total):
     needed to meet a given amount total
     """
     d = 0
+    if coins == []:
+        return -1
     if total <= 0:
         return 0
     sum = 0
