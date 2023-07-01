@@ -59,8 +59,11 @@ def ben(n):
 
 def isWinner(x, nums):
     """returns the name of the winner"""
-    if x <= 0 or nums == [0]:
+    if x <= 0:
         return None
+    if len(nums) == 1:
+        if prime(nums[0]) == 0:
+            return None
     h = nums
     mw = 0
     bw = 0
